@@ -1,4 +1,3 @@
-// import s from './MoviePage.module.css'
 
 
 const MoviePage = () => {
