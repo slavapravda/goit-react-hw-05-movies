@@ -1,8 +1,7 @@
-import s from './MoviesGallery.module.css';
+// import s from './MoviesGallery.module.css';
 import trendingMovies from '../../api/searchMovie';
 import MoviesItem from 'components/MoviesItem/MoviesItem';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 const MoviesGallery = () => {
   const [movies, setMovies] = useState([]);
@@ -29,14 +28,14 @@ const MoviesGallery = () => {
   return (
     <>
     {loading && <p>Загрузка...</p>}
-      <ul>
+      {movies && <ul>
         {movies.map(({ id, name, title }) => (
           <MoviesItem
-          id={id}
+          key={id}
           name={name}
           title={title}/>
         ))}
-      </ul>
+      </ul>}
       {error && <p>{error.message}</p>}
     </>
   );
