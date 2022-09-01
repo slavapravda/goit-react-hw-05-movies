@@ -1,7 +1,16 @@
-export const App = () => {
+import s from './App.module.css'
+
+import Navbar from './Navbar/Navbar';
+import UserRoutes from './UserRoutes';
+
+
+const App = () => {
   return (
-    <div>
-      <p>привет</p>
+    <div className={s.container}>
+      <Navbar/>
+      <UserRoutes/>
     </div>
   );
 };
+
+export default App;
