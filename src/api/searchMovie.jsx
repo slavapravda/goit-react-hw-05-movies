@@ -18,3 +18,20 @@ function trendingMovies() {
 
 export default trendingMovies;
 
+// https://api.themoviedb.org/3/movie/{movie_id}?api_key=6cfef64e07855702e198aec946e650ef&language=en-US
+
+export function singleMovie(id) {
+  return fetch(
+    `${BASE_URL}3/movie/${id}?api_key=${API_KEY}`
+  ).then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    return Promise.reject(
+      new Error(`Sorry`)
+    );
+  });
+}
+
+
+

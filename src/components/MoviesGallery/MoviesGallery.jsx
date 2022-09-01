@@ -31,6 +31,7 @@ const MoviesGallery = () => {
       {movies && <ul>
         {movies.map(({ id, name, title }) => (
           <MoviesItem
+          id={id}
           key={id}
           name={name}
           title={title}/>
