@@ -9,6 +9,7 @@ const SingleMoviePage = () => {
   const [movie, setMovie] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  console.log(error)
 
   const { id } = useParams();
   const navigate = useNavigate();
