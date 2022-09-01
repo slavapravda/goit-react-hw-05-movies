@@ -1,4 +1,3 @@
-import s from './HomePage.module.css'
 import MoviesGallery from 'components/MoviesGallery/MoviesGallery';
 
 const HomePage = () => {
