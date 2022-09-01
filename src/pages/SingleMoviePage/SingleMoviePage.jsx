@@ -1,51 +1,65 @@
-// import { useState, useEffect } from "react";
-// import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
-// import { singleMovie } from "api/searchMovie";
+import s from './SingleMoviePage.module.css';
 
-// const SingleMoviePage = () => {
-//     const [movie, setMovie] = useState([])
-//     const [loading, setLoading] = useState(false)
-//     const [error, setError] = useState(null)
+import { singleMovie } from 'api/searchMovie';
 
-//     const {id} = useParams()
+const SingleMoviePage = () => {
+  const [movie, setMovie] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-//     useEffect(() => {
-//         const fetchMovie = async() => {
-//             try {
-//                 setLoading(true);
-//                 setError(null);
+  const { id } = useParams();
+  const navigate = useNavigate();
 
-//                 const movie = await singleMovie(id)
-//                 setMovie(movie)
-//                 console.log(movie)
-//             } catch (error) {
-//                 setError(error);
-//             }
-//             finally{
-//                 setLoading(false);
-//             }
-//         }
-//         fetchMovie()
+  const goBack = () => navigate(-1);
 
-//     }, [id])
+  useEffect(() => {
+    const fetchMovie = async () => {
+      try {
+        setLoading(true);
+        setError(null);
 
-//     return (
-//         <div>
-//         <div>
-//             <img src="" alt={movie.title} />
-//         </div>
-//         <div>
-//             <h2>{movie.title}</h2>
-//             <p>User score: {movie.vote_average} %</p>
-//             <h3>Overview</h3>
-//             <p>{movie.overview}</p>
-//             <h4>Genres</h4>
-//             <p>{movie.genres.name}</p>
-//         </div>
+        const movie = await singleMovie(id);
 
-//         </div>
-//     );
-// }
+        setMovie(movie);
 
-// export default SingleMoviePage;
+      } catch (error) {
+        setError(error);
+
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchMovie();
+  }, [id]);
+
+  const movieGenres = movie.genres?.map(el => el.name).join(', ');
+
+  return (
+    <>
+      <button className={s.btn} onClick={goBack} type="button">
+        &#8592; Go back
+      </button>
+      {loading && <p>Загрузка...</p>}
+      <div className={s.pagePosition}>
+        <img
+          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+          alt={movie.title}
+          width={420}
+        />
+        <div className={s.pageRight}>
+          <h2>{movie.title}</h2>
+          <p>User score: {movie.vote_average} %</p>
+          <h3>Overview</h3>
+          <p>{movie.overview}</p>
+          <h4>Genres</h4>
+          <p>{movieGenres}</p>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default SingleMoviePage;

@@ -1,7 +1,7 @@
 .navbar {
   padding: 15px 0;
   box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
-  0px 2px 1px rgb(0 0 0 / 20%);
+    0px 2px 1px rgb(0 0 0 / 20%);
 }
 
 .list {
@@ -21,12 +21,22 @@
 .link {
   font-size: 18px;
   padding: 8px 16px;
-  text-decoration: none;
   color: black;
   font-weight: 500;
+
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+
+  transition: background-size 0.3s;
 }
 
-.link.active{
-    color: red;
+.link:hover {
+  background-size: 100% 2px;
 }
 
+.link.active {
+  color: red;
+}

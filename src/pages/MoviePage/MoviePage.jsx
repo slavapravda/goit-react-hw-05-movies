@@ -1,12 +1,9 @@
-
-
 const MoviePage = () => {
-    return (
-        <>
-        <p>privet</p>
-        </>
-
-    );
-}
+  return (
+    <>
+      <p>privet</p>
+    </>
+  );
+};
 
 export default MoviePage;
