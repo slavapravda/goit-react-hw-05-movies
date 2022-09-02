@@ -6,7 +6,7 @@ import s from './SingleMoviePage.module.css';
 import { singleMovie } from 'api/searchMovie';
 
 const SingleMoviePage = () => {
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -33,8 +33,6 @@ const SingleMoviePage = () => {
     fetchMovie();
   }, [id]);
 
-  const movieGenres = movie.genres?.map(el => el.name).join(', ');
-
   return (
     <>
       <button className={s.btn} onClick={goBack} type="button">
@@ -60,7 +58,7 @@ const SingleMoviePage = () => {
             </div>
             <div className={s.pageRightShadow}>
               <h4>Genres</h4>
-              <p>{movieGenres}</p>
+              <p>{movie.genres.map(el => el.name).join(', ')}</p>
             </div>
           </div>
         </div>
