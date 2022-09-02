@@ -13,7 +13,6 @@ const MoviesGallery = () => {
       setLoading(true);
       try {
         const data = await trendingMovies();
-        console.log(data);
         setMovies(data.results);
       } catch (error) {
         setError(error);

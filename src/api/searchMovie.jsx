@@ -21,6 +21,6 @@ export function singleMovie(id) {
     if (response.ok) {
       return response.json();
     }
-    return Promise.reject(new Error(`Sorry`));
+    return Promise.reject(new Error(`Iнформацiя про даний фiльм вiдсутня, вибачте! Повернiться на головну сторiнку.`));
   });
 }
