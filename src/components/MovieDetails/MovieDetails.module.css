@@ -1,0 +1,115 @@
+.pagePosition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px 40px;
+  margin-top: 30px;
+
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+    0px 2px 1px rgb(0 0 0 / 20%);
+}
+
+.pageRight {
+  margin-left: 40px;
+  padding: 30px 10px;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pageRightShadow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+}
+.pageRightShadow:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.pageRightShadow:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn {
+  padding: 7px 12px;
+  margin-top: 20px;
+  color: red;
+  background-color: #fff;
+  border: 1px solid red;
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition: all 500ms ease-out;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: red;
+  transform: scale(1.15);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 500ms ease-out;
+}
+
+.infoBlock {
+  margin-top: 20px;
+  padding: 10px 15px;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+    0px 2px 1px rgb(0 0 0 / 20%);
+}
+.cast,
+.reviews {
+  margin-right: 20px;
+  padding: 7px 12px;
+  display: inline-block;
+  text-decoration: none;
+
+  color: black;
+  border: 1px solid black;
+
+  border-radius: 5px;
+  transition: all 500ms ease-out;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cast:hover {
+  border: 1px solid red;
+  color: red;
+  transform: scale(1.15);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 500ms ease-out;
+}
+
+.reviews:hover {
+  border: 1px solid red;
+  color: red;
+  transform: scale(1.15);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 500ms ease-out;
+}
+
+.infoTitle {
+  padding: 10px 15px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+
+  cursor: default;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  transition: all 500ms ease-out;
+}
+.infoTitle:hover {
+  color: red;
+  background-size: 100% 2px;
+  transition: all 500ms ease-out;
+}
