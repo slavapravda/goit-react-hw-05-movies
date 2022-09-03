@@ -20,7 +20,6 @@ const MovieDetails = () => {
 
         const movie = await singleMovie(id);
         setMovie(movie);
-        console.log(movie);
       } catch (error) {
         setError(error);
       } finally {

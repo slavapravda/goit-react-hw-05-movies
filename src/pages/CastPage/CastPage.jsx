@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import s from './CastPage.module.css'
+import s from './CastPage.module.css';
 
 import { castMovie } from 'api/searchMovie';
 
@@ -20,7 +20,6 @@ const CastPage = () => {
 
         const data = await castMovie(id);
         setCast(data.cast);
-        console.log(data);
       } catch (error) {
         setError(error);
       } finally {
@@ -34,7 +33,8 @@ const CastPage = () => {
   const elements = cast.map(({ id, name, character, profile_path }) => (
     <li key={id} className={s.item}>
       {profile_path ? (
-        <img className={s.photo}
+        <img
+          className={s.photo}
           src={`https://image.tmdb.org/t/p/original${profile_path}`}
           alt={name}
           width={180}
@@ -50,7 +50,7 @@ const CastPage = () => {
 
   return (
     <div>
-      {loading && <p>Завантаження актерского складу...</p>}
+      {loading && <p>Завантаження акторского складу...</p>}
       {cast && <ul className={s.list}>{elements}</ul>}
       {error && <p>{error.message}</p>}
     </div>

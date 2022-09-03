@@ -1,0 +1,45 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.item {
+  background-color: gainsboro;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  list-style: none;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+    0px 2px 1px rgb(0 0 0 / 20%);
+}
+
+.item:hover {
+  transform: scale(1.05);
+  transition: all 500ms ease-out;
+  border-top: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+}
+
+.title {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.text {
+  font-size: 14px;
+}
+
+.noReviews {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 18px;
+
+  border-radius: 5px;
+
+  background-color: white;
+  color: red;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+  0px 2px 1px rgb(0 0 0 / 20%);
+}
